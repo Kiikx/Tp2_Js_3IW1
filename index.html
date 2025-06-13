@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tp Js</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <h1>🍔 Mini Food Truck</h1>
+    <section id="wallet">
+        <h2>💳 Wallet</h2>
+        <p>Solde : <span id="wallet-solde">0.00 €</span></p>
+
+        <input type="number" id="recharge-montant" placeholder="Montant (€)" min="0.1" step="0.1" />
+        <button id="btn-recharger">Recharger</button>
+    </section>
+
+    <section id="menu">
+        <h2>Menu</h2>
+        <div id="menu-items"></div>
+    </section>
+
+    <section id="panier">
+        <h2>Votre panier</h2>
+        <div id="panier-items"></div>
+        <p>Total : <span id="total">0 €</span></p>
+        <button id="btn-commander">Commander</button>
+        <button id="btn-vider-panier">Vider le panier</button>
+
+    </section>
+
+    <section id="recap" style="display: none;">
+        <h2>Récapitulatif de votre commande</h2>
+        <div id="recap-contenu"></div>
+        <p id="recap-prix"></p>
+        <button id="btn-valider">Valider</button>
+        <button id="btn-annuler">Annuler</button>
+    </section>
+
+    <div id="toaster" class="toaster"></div>
+
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
