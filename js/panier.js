@@ -14,10 +14,18 @@ export function initialiserPanier() {
 
   if (btnVider) {
     btnVider.addEventListener("click", () => {
-      panier = {};
-      sauvegarderPanier();
-      afficherPanier();
-      afficherToaster("Panier vidé");
+      console.log(Object.keys(panier).length);
+      
+      if (Object.keys(panier).length === 0) {
+        console.log("Panier déjà vide");
+        
+        afficherToaster("Le panier est déjà vide", true);
+      } else {
+        panier = {};
+        sauvegarderPanier();
+        afficherPanier();
+        afficherToaster("Panier vidé");
+      }
     });
   }
 
@@ -103,5 +111,5 @@ export function afficherPanier() {
 
   totalDisplay.textContent = total.toFixed(2) + " €";
 
-  
+
 }

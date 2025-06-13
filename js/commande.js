@@ -15,15 +15,14 @@ const commandesEnCours = [];
 
 export function initialiserCommande() {
   btnCommander.addEventListener("click", () => {
+    if (Object.keys(panier).length === 0) {
+      afficherToaster("Le panier est vide, impossible de commander", true);
+    }else {
     afficherRecapitulatif();
+    }
   });
 
-  btnViderPanier.addEventListener("click", () => {
-    viderPanier();
-    sauvegarderPanier();
-    afficherPanier();
-    afficherToaster("Panier vidé !");
-  });
+
 
   btnAnnuler.addEventListener("click", () => {
     recapZone.style.display = "none";
